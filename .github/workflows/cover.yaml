@@ -6,9 +6,10 @@ on:
   workflow_dispatch:
     branches: [ '**' ]
 
+permissions:
+  pull-requests: write
+
 jobs:
-  permissions:
-    pull-requests: write
   full_ci:
     strategy:
       matrix:
