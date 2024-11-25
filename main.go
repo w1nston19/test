@@ -2,11 +2,11 @@ package main
 
 import (
 	"os"
-	s "test/test/sleeper"
+	sleeper2 "test/sleeper"
 	"time"
 )
 
 func main() {
-	sleeper := &s.ConfigurableSleeper{1 * time.Second, time.Sleep}
-	s.Countdown(os.Stdout, sleeper)
+	sleeper := &sleeper2.ConfigurableSleeper{1 * time.Second, time.Sleep}
+	sleeper2.Countdown(os.Stdout, sleeper)
 }
