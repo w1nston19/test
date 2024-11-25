@@ -1,8 +1,8 @@
 package main
 
 import (
+	sleeper2 "github.com/w1nston19/test/sleeper"
 	"os"
-	sleeper2 "test/sleeper"
 	"time"
 )
 
