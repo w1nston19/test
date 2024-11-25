@@ -26,3 +26,10 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+    - name: go-test-coverage
+      uses: vladopajic/go-test-coverage@v2.11.0
+
+    - name: Linter
+      uses: golangci/golangci-lint-action@v6
+
