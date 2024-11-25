@@ -35,6 +35,7 @@ jobs:
         uses: vladopajic/go-test-coverage@v2
         with:
           test-command: go test -cover -coverprofile=coverage.out ./...
+          coverage-file: coverage.out # Specify the coverage file explicitly
           coverage-minimum: 80
           output: coverage.txt
 
