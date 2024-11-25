@@ -7,7 +7,8 @@ on:
     branches: [ '**' ]
 
 permissions:
-  pull-requests: write
+  pull-requests: write  # Write access to pull request metadata
+  contents: read
 
 jobs:
   full_ci:
