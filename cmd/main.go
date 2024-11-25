@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	sleeper := &sleeper2.ConfigurableSleeper{1 * time.Second, time.Sleep}
+	sleeper := &sleeper2.ConfigurableSleeper{Duration: 1 * time.Second, SleepF: time.Sleep}
 	sleeper2.Countdown(os.Stdout, sleeper)
 }
