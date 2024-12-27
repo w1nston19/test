@@ -8,7 +8,7 @@ import (
 
 // Sleeper allows you to put delays.
 type Sleeper interface {
-	Sleep()
+	Sleep() error
 }
 
 // ConfigurableSleeper is an implementation of Sleeper with a defined delay.
@@ -18,8 +18,9 @@ type ConfigurableSleeper struct {
 }
 
 // Sleep will pause execution for the defined Duration.
-func (c *ConfigurableSleeper) Sleep() {
+func (c *ConfigurableSleeper) Sleep() error {
 	c.SleepF(c.Duration)
+	return nil
 }
 
 const finalWord = "Go!"
