@@ -49,7 +49,7 @@ func TestConfigurableSleeper(t *testing.T) {
 
 	spyTime := &SpyTime{}
 	sleeper := ConfigurableSleeper{sleepTime, spyTime.Sleep}
-	sleeper.Sleep()
+	_ = sleeper.Sleep()
 
 	if spyTime.durationSlept != sleepTime {
 		t.Errorf("should have slept for %v but slept for %v", sleepTime, spyTime.durationSlept)
@@ -60,8 +60,9 @@ type SpyCountdownOperations struct {
 	Calls []string
 }
 
-func (s *SpyCountdownOperations) Sleep() {
+func (s *SpyCountdownOperations) Sleep() error {
 	s.Calls = append(s.Calls, sleep)
+	return nil
 }
 
 func (s *SpyCountdownOperations) Write(p []byte) (n int, err error) {
