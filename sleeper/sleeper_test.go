@@ -60,8 +60,9 @@ type SpyCountdownOperations struct {
 	Calls []string
 }
 
-func (s *SpyCountdownOperations) Sleep() {
+func (s *SpyCountdownOperations) Sleep() error {
 	s.Calls = append(s.Calls, sleep)
+	return nil
 }
 
 func (s *SpyCountdownOperations) Write(p []byte) (n int, err error) {
